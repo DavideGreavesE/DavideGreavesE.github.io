@@ -217,6 +217,10 @@ i {
   height: 100%;
 }
 
+.fsz {
+  font-size: 30px;
+}
+
 .white-bg {
   width: 130px;
   margin: 20px;
