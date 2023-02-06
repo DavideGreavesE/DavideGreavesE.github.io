@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuggy</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://kit.fontawesome.com/5d83f25ef6.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.8.0/boot.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-mocks/1.5.8/angular-mocks.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <script>
+
+
+    $(document).ready(function () {
+
+      $('ul.tabs li').click(function () {
+        var tab_id = $(this).attr('data-tab');
+
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+
+        $(this).addClass('current');
+        $("#" + tab_id).addClass('current');
+      })
+
+    })
+
+  </script>
+
+
+  <div id="menu">
+    <div class="line"></div>
+
+    <div class="container">
+      <ul class="tabs">
+        <li class="tab-link current" data-tab="tab-1">WHO</li>
+        <li class="tab-link" data-tab="tab-2">PRO</li>
+        <li class="tab-link" data-tab="tab-3">SOC</li>
+        <li class="tab-link" data-tab="tab-4">LEA</li>
+        <li class="tab-link" data-tab="tab-5">OTH</li>
+        <li class="tab-link" data-tab="tab-6">CON</li>
+      </ul>
+      <div id="tab-1" class="tab-content current">
+        <div class="range">
+          <p>Davide - Developer</p>
+          <div class="padding"></div>
+          <p>Python <i class="bi bi-filetype-py"></i>, Java <i class="bi bi-cup-hot"></i>, PowerShell <i
+              class="bi bi-terminal"></i></p>
+          <div class="padding"></div>
+          <p>CS:GO <i class="bi bi-heart-fill"></i>, Fortnite <i class="bi bi-controller"></i>, Rocket League <i
+              class="bi bi-car-front"></i></p>
+        </div>
+      </div>
+      <div id="tab-2" class="tab-content">
+        <div class="cards-wrapper">
+          <div class="card">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="link">BleachHack</a>
+            <p class="description">Client based on BleachHack by <a href="https://github.com/BleachDev/BleachHack"
+                target="_blank" class="link">BleachDev</a></p>
+          </div>
+          <!-- <div class="card">
+            <a href="https://github.com/lNuggy/lNuggy.github.io" target="_blank" class="link">This Website</a>
+            <p class="description">Random skeet type website</p>
+          </div> -->
+          <!-- <div class="card-bottom">
+            <a href="#" class="link">Link</a>
+            <p class="description">Description</p>
+          </div>
+          <div class="card-bottom">
+            <a href="#" class="link">Link</a>
+            <p class="description">Description</p>
+          </div> -->
+        </div>
+      </div>
+      <div id="tab-3" class="tab-content">
+        <div class="centerer">
+          <div class="range">
+            <div class="white-bg">
+              <a href="https://www.youtube.com/channel/UCztcj49S7F208aAMBkH7cVQ" target="_blank"
+                class="link">Youtube</a>
+            </div>
+            <div class="white-bg">
+              <a href="https://open.spotify.com/user/magix74" target="_blank" class="link">Spotify</a>
+            </div>
+            <div class="white-bg">
+              <a href="https://twitter.com/Nuuuggy" target="_blank" class="link">Twitter</a>
+            </div>
+            <div class="white-bg">
+              <a href="https://github.com/davidegreaves" target="_blank" class="link">Github</a>
+            </div>
+            <div class="white-bg">
+              <a href="https://www.instagram.com/franco_ferriello/" target="_blank" class="link">Instagram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tab-4" class="tab-content">
+        <div class="centerer">
+          <div class="range">
+            <h3>Currently learning</h3>
+            <br>
+            <p>Python: </p>
+            <p>Tkinter</p>
+            <br>
+            <p>Java: </p>
+            <p>Forge API</p>
+            <p>Fabric API</p>
+            <br>
+            <p>Web: </p>
+            <p>Svelte</p>
+            <p>React</p>
+          </div>
+        </div>
+      </div>
+      <div id="tab-5" class="tab-content">
+        <div class="range">
+          <label for="color-input">My favorite color:</label>
+          <input type="color" id="color-input" value="#F9D2FE" name="color-input">
+        </div>
+      </div>
+      <div id="tab-6" class="tab-content">
+        <div class="range">
+          <p>DM Me on IG</p>
+        </div>
+      </div>
+      <script src="./script.js"></script>
+    </div>
+  </div>
+</body>
+
+</html>
