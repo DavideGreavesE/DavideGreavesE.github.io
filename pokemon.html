@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display Images</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="cardName" placeholder="Card Name">
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+                <button type="button" class="btn btn-secondary" id="clearButton">Clear</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card-columns" id="cardColumns"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            const cardColumns = $('#cardColumns');
+            const cardName = $('#cardName');
+            const searchButton = $('#searchButton');
+            const clearButton = $('#clearButton');
+
+            searchButton.click(() => {
+                const card = cardName.val().replace(/ /g, '+');
+                const url = `https://www.pokemon.com/it/gcc/archivio-carte/?cardName=${card}`;
+                cardColumns.empty();
+
+                $.get(url, (data) => {
+                    const cards = data.data;
+                    const images = cards.map(card => card.image_uris.normal);
+                    images.forEach(image => {
+                        const cardImage = $('<img>').attr('src', image).addClass('card-img-top');
+                        const cardBody = $('<div>').addClass('card-body');
+                        const card = $('<div>').addClass('card').append(cardImage, cardBody);
+                        cardColumns.append(card);
+                    });
+                });
+            });
+
+            clearButton.click(() => {
+                cardColumns.empty();
+                cardName.val('');
+            });
+        });
+    </script>
+</body>
+
+</html>
